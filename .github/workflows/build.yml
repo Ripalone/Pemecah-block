@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Ekstrak zip proyek v4
-        run: unzip -q -o PemecahBlokOtomatis-v4.zip
+      - name: Ekstrak zip proyek v5
+        run: unzip -q -o PemecahBlokOtomatis-v5.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -20,5 +20,5 @@ jobs:
         run: gradle assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4
         with:
-          name: PemecahBlokOtomatis-v4-debug
+          name: PemecahBlokOtomatis-v5-debug
           path: PemecahBlokOtomatis/app/build/outputs/apk/debug/app-debug.apk
