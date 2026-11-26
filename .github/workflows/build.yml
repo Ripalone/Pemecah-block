@@ -6,7 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: unzip -q '*.zip'
+      - name: Ekstrak zip proyek v3
+        run: unzip -q -o PemecahBlokOtomatis-v3.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -14,10 +15,10 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.7
-      - name: Build
+      - name: Build debug APK
         working-directory: PemecahBlokOtomatis
         run: gradle assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4
         with:
-          name: PemecahBlokOtomatis-debug
+          name: PemecahBlokOtomatis-v3-debug
           path: PemecahBlokOtomatis/app/build/outputs/apk/debug/app-debug.apk
