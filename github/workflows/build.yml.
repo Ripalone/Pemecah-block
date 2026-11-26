@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Ekstrak zip proyek v3
-        run: unzip -q PemecahBlokOtomatis-v3.zip
+        run: unzip -q -o PemecahBlokOtomatis-v3.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
